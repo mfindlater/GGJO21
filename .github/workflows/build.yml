@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Godot:
+  GodotDesktop:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,6 +39,9 @@ jobs:
   GodotWeb:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true 
       - uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: GGJO21
